@@ -1,3 +1,11 @@
+<script>
+const { title } = useAppConfig();
+
+useHead({
+  title,
+});
+</script>
+
 <template>
   <UContainer class="page-container">
     <h1 class="title">Nuxt Chat</h1>
