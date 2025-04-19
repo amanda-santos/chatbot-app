@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import type { ChatMessage, Chat } from '../types'
+import type { ChatMessage, Chat } from "../types";
 
 const props = defineProps<{
-  messages: ChatMessage[]
-  chat: Chat
-}>()
+  messages: ChatMessage[];
+  chat: Chat;
+  isLoadingResponse: boolean;
+}>();
 
-const emit = defineEmits(['send-message'])
+const emit = defineEmits(["send-message"]);
 
-const { showScrollButton, scrollToBottom, pinToBottom } =
-  useChatScroll()
+const { showScrollButton, scrollToBottom, pinToBottom } = useChatScroll();
 
 function handleSendMessage(message: string) {
-  emit('send-message', message)
+  emit("send-message", message);
 }
 
-watch(() => props.messages, pinToBottom, { deep: true })
+watch(() => props.messages, pinToBottom, { deep: true });
 </script>
 
 <template>
@@ -31,7 +31,7 @@ watch(() => props.messages, pinToBottom, { deep: true })
       <template v-else>
         <div class="chat-header">
           <h1 class="title">
-            {{ chat?.title || 'Untitled Chat' }}
+            {{ chat?.title || "Untitled Chat" }}
           </h1>
         </div>
         <div class="messages-container">
@@ -48,6 +48,10 @@ watch(() => props.messages, pinToBottom, { deep: true })
               {{ message.content }}
             </div>
           </div>
+
+          <span v-if="isLoadingResponse" class="loading-response-indicator"
+            >&#9611;</span
+          >
         </div>
 
         <div class="message-form-container">
@@ -139,9 +143,7 @@ watch(() => props.messages, pinToBottom, { deep: true })
   position: fixed;
   bottom: 1.5rem;
   max-width: 800px;
-  width: calc(
-    100% - 3rem
-  ); /* Account for container padding */
+  width: calc(100% - 3rem); /* Account for container padding */
   z-index: 10;
 }
 
@@ -198,5 +200,11 @@ watch(() => props.messages, pinToBottom, { deep: true })
 
 .message-input::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+.loading-response-indicator {
+  display: inline-block;
+  animation: pulse 1s infinite;
+  margin-left: 0.25rem;
 }
 </style>
