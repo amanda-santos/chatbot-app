@@ -1,4 +1,4 @@
-<script>
+<script setup lang="ts">
 const { title } = useAppConfig();
 
 useHead({
