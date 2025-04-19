@@ -1,6 +1,25 @@
 <template>
-  <UContainer class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-4xl font-bold">Nuxt Chat</h1>
-    <UButton to="/chat" class="mt-4">Start Chat</UButton>
+  <UContainer class="page-container">
+    <h1 class="title">Nuxt Chat</h1>
+    <UButton to="/chat" class="button">Start Chat</UButton>
   </UContainer>
 </template>
+
+<style scoped>
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.button {
+  margin-top: 1rem;
+}
+</style>
