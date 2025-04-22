@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { chat, messages, sendMessage } = useChat();
+const route = useRoute();
+const { chat, messages, sendMessage } = useChat(route.params.id as string);
 
 const isLoadingResponse = ref(false);
 
@@ -12,7 +13,7 @@ async function handleSendMessage(message: string) {
 
 const appConfig = useAppConfig();
 const title = computed(() =>
-  chat.value.title
+  chat.value?.title
     ? `${chat.value.title} - ${appConfig.title}`
     : appConfig.title
 );
@@ -24,6 +25,7 @@ useHead({
 
 <template>
   <ChatWindow
+    v-if="chat"
     :chat
     :messages
     :is-loading-response="isLoadingResponse"

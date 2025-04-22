@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const { title } = useAppConfig();
+const { createChat } = useChats();
+
+function handleCreateChat() {
+  createChat();
+}
 
 useHead({
   title,
@@ -8,8 +13,8 @@ useHead({
 
 <template>
   <UContainer class="page-container">
-    <h1 class="title">Nuxt Chat</h1>
-    <UButton to="/chat" class="button">Start Chat</UButton>
+    <span class="text-2xl font-bold mb-2">{{ title }}</span>
+    <UButton class="button" @click="handleCreateChat"> Start Chat </UButton>
   </UContainer>
 </template>
 
