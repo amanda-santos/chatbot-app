@@ -1,4 +1,4 @@
-import type { Chat, ChatMessage } from "../types";
+import type { Chat, ChatMessage, Project } from "../types";
 
 const MOCKED_MESSAGES: ChatMessage[] = [
   {
@@ -114,6 +114,14 @@ const MOCKED_CHAT: Chat = {
   id: "1",
   title: "Nuxt.js project help",
   messages: [...MOCKED_MESSAGES],
+  projectId: "1",
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
 
-export { MOCKED_CHAT, MOCKED_MESSAGES };
+const MOCKED_PROJECT: Project = {
+  id: "1",
+  name: "Nuxt.js project",
+};
+
+export { MOCKED_CHAT, MOCKED_MESSAGES, MOCKED_PROJECT };
