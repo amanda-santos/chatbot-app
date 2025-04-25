@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const { title } = useAppConfig();
-const { createChat } = useChats();
+const { createChatAndNavigate } = useChats();
 
-function handleCreateChat() {
-  createChat();
+async function handleCreateChat() {
+  await createChatAndNavigate();
 }
 
 useHead({
