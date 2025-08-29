@@ -1,6 +1,3 @@
-import type { Project } from "../types";
-import { MOCKED_PROJECT } from "./mockedData";
-
 export default function useProjects() {
   const projects = useState<Project[]>("projects", () => [MOCKED_PROJECT]);
 
@@ -9,6 +6,8 @@ export default function useProjects() {
     const project = {
       id,
       name: "New Project",
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
 
     projects.value.push(project);

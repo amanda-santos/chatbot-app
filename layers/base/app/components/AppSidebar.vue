@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
-import type { Chat, Project } from "~~/layers/chat/app/types";
+import type { Chat, Project } from "~~/layers/chat/shared/types/types";
 import { filterChatsByDateRange } from "../utils/date";
 
 defineProps<{

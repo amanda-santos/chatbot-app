@@ -1,32 +1,40 @@
-import type { Chat, ChatMessage, Project } from "../types";
-
 const MOCKED_MESSAGES: ChatMessage[] = [
   {
     id: "1",
     role: "user",
     content: "Hello, can you help me with my Nuxt.js project?",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
     id: "2",
     role: "assistant",
     content:
       "Of course! I'd be happy to help with your Nuxt.js project. What specific questions or issues do you have?",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
     id: "3",
     role: "user",
     content: "How do I implement server-side rendering?",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
     id: "4",
     role: "assistant",
     content:
       "Nuxt.js provides server-side rendering out of the box! You don't need to do any special configuration for basic SSR. If you need specific optimizations, we can discuss those in detail.",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
     id: "5",
     role: "user",
     content: "Can you tell me more about tests in Nuxt?",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
     id: "6",
@@ -107,6 +115,8 @@ mockNuxtImport('useAsyncData', () => {
 // ...tests
 \`\`\`
 `,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
 ];
 
@@ -122,6 +132,8 @@ const MOCKED_CHAT: Chat = {
 const MOCKED_PROJECT: Project = {
   id: "1",
   name: "Nuxt.js project",
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
 
 export { MOCKED_CHAT, MOCKED_MESSAGES, MOCKED_PROJECT };
