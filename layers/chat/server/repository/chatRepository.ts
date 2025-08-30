@@ -1,10 +1,3 @@
-import type {
-  Chat,
-  ChatMessage,
-  ChatWithProject,
-  Project,
-} from "../../shared/types/types";
-
 import { v4 as uuidv4 } from "uuid";
 
 import { MOCKED_CHAT } from "../../app/composables/mockedData";

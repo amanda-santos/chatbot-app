@@ -1,5 +1,3 @@
-import type { Project } from "../../shared/types/types";
-
 import { v4 as uuidv4 } from "uuid";
 
 import { MOCKED_PROJECT } from "../../app/composables/mockedData";
