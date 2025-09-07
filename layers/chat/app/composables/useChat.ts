@@ -54,6 +54,9 @@ export function useChat(chatId: string) {
       `/api/chats/${chatId}/messages/generate`,
       {
         method: "POST",
+        body: {
+          messages: [...messages.value],
+        },
       }
     );
 
